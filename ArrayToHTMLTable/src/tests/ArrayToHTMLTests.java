@@ -41,13 +41,7 @@ public class ArrayToHTMLTests {
 		String htmlTable = table.getHTMLTable();
 		assertEquals(htmlTable, "<table><th>a</th><th>b</th><tr><td>1</td><td>2</td></tr><tr><td>4</td><td>5</td></tr></table>");
 	}
-	
-	@Test
-	public void writeToStream() {
-		TableMain main = new TableMain();
-		main.write();
-		assertEquals(os.toString(), "Hej");
-	}
+
 	
 	@Test
 	public void createTableWithTestScannerInsteadOfSystemIn() {
@@ -58,11 +52,10 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void useScannerToWriteToStream() {
-		scanner = new Scanner("Hej hej");
-		scanner.useDelimiter("\n");
+		scanner = new Scanner("Hejheja");
 
 		TableMain main = new TableMain(scanner);
 		main.write();
-		assertEquals(os.toString(), "Hej hej");
+		assertEquals(os.toString(), "Hejheja");
 	}
 }

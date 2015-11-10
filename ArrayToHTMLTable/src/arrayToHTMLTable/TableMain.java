@@ -6,17 +6,23 @@ import java.util.Scanner;
 public class TableMain {
 	
 	PrintStream ps = null;
+	Scanner scanner = null;
 	
 	public TableMain() {
 		ps = System.out;
+		scanner = new Scanner(System.in);
 	}
 	
 	public TableMain(Scanner scanner) {
-		
+		ps = System.out;
+		this.scanner = scanner;
 	}
 	
 	public void write() {
-		ps.print("Hej");
+		if(scanner != null && ps != null) {
+			while(scanner.hasNext()) {
+				ps.print(scanner.next());
+			}
+		}
 	}
-	
 }

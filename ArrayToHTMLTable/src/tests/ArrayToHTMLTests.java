@@ -10,7 +10,7 @@ public class ArrayToHTMLTests {
 	@Test
 	public void createTableObject() {
 		ArrayToHTMLTable table = new ArrayToHTMLTable();
-		assertFalse(table.tableArray, null);
+		assertFalse(table.tableArray == null);
 	}
 
 }

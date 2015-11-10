@@ -1,6 +1,6 @@
 package tests;
 import arrayToHTMLTable.ArrayToHTMLTable;
-
+import arrayToHTMLTable.TableMain;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -26,5 +26,11 @@ public class ArrayToHTMLTests {
 		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
 		String htmlTable = table.getHTMLTable();
 		assertEquals(htmlTable, "<table><th>a</th><th>b</th><tr><td>1</td><td>2</td></tr><tr><td>4</td><td>5</td></tr></table>");
+	}
+	
+	@Test
+	public void writeToStream() {
+		TableMain main = new TableMain();
+		main.write();
 	}
 }

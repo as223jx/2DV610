@@ -9,4 +9,8 @@ public class ArrayToHTMLTable {
 			throw new NullPointerException();
 		tableArray = array;
 	}
+	
+	public String getHTMLTable() {
+		return "";
+	}
 }

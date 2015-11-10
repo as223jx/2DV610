@@ -20,4 +20,11 @@ public class ArrayToHTMLTests {
 		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
 	}
 
+	@Test
+	public void testGetHTMLTable() {
+		Object[][] array = {{"a", "b"}, {1, 2}, {4, 5}};
+		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
+		String htmlTable = table.getHTMLTable();
+		assertEquals(htmlTable, "<table><th>a</th><th>b</th><tr><td>1</td><td>2</td></tr><tr><td>4</td><td>5</td></tr></table>");
+	}
 }

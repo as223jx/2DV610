@@ -7,6 +7,7 @@ public class TableMain {
 	
 	PrintStream ps = null;
 	Scanner scanner = null;
+	public String inString = null;
 	
 	public TableMain() {
 		ps = System.out;
@@ -16,6 +17,11 @@ public class TableMain {
 	public TableMain(Scanner scanner) {
 		ps = System.out;
 		this.scanner = scanner;
+	}
+	
+	public void writeLine() {
+		inString = scanner.next();
+		ps.print(inString);
 	}
 	
 	public void write() {

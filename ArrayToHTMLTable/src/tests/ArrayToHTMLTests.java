@@ -58,4 +58,11 @@ public class ArrayToHTMLTests {
 		main.write();
 		assertEquals(os.toString(), "Hejheja");
 	}
+	
+	@Test
+	public void writeLineUsingSystemIn() {
+		TableMain main = new TableMain();
+		main.writeLine();
+		assertEquals(os.toString(), main.inString);
+	}
 }

@@ -55,4 +55,14 @@ public class ArrayToHTMLTests {
 		
 		TableMain main = new TableMain(scanner);
 	}
+	
+	@Test
+	public void useScannerToWriteToStream() {
+		scanner = new Scanner("Hej hej");
+		scanner.useDelimiter("\n");
+
+		TableMain main = new TableMain(scanner);
+		main.write();
+		assertEquals(os.toString(), "Hej hej");
+	}
 }

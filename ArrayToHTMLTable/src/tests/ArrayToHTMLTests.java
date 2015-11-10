@@ -13,5 +13,11 @@ public class ArrayToHTMLTests {
 		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
 		assertTrue(table.tableArray == array);
 	}
+	
+	@Test (expected = NullPointerException.class)
+	public void testNullArrayError() {
+		Object[][] array = null;
+		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
+	}
 
 }

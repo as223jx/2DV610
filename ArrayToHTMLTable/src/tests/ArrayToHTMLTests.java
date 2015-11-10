@@ -11,7 +11,7 @@ public class ArrayToHTMLTests {
 	public void createTableObject() {
 		Object[][] array = {{"a", "b", "c"}, {1, 2, 3}, {4, 5, 6}};
 		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
-		assertTrue(table.tableArray == null);
+		assertTrue(table.tableArray == array);
 	}
 
 }

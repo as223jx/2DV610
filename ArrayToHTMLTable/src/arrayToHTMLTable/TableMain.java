@@ -4,7 +4,7 @@ import java.io.PrintStream;
 
 public class TableMain {
 	
-	PrintStream ps = null;
+	PrintStream ps = System.out;
 	
 	public TableMain() {
 		

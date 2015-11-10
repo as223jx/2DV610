@@ -4,7 +4,7 @@ public class ArrayToHTMLTable {
 	
 	public Object[][] tableArray = {};
 	
-	public ArrayToHTMLTable() {
-		
+	public ArrayToHTMLTable(Object[][] array) {
+		tableArray = array;
 	}
 }

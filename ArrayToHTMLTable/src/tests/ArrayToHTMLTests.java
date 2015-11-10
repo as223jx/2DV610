@@ -9,8 +9,9 @@ public class ArrayToHTMLTests {
 
 	@Test
 	public void createTableObject() {
-		ArrayToHTMLTable table = new ArrayToHTMLTable();
-		assertFalse(table.tableArray == null);
+		Object[][] array = {{"a", "b", "c"}, {1, 2, 3}, {4, 5, 6}};
+		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
+		assertTrue(table.tableArray == null);
 	}
 
 }

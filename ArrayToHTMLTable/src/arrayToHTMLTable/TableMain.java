@@ -1,6 +1,7 @@
 package arrayToHTMLTable;
 
 import java.io.PrintStream;
+import java.util.Scanner;
 
 public class TableMain {
 	
@@ -10,8 +11,8 @@ public class TableMain {
 		ps = System.out;
 	}
 	
-	public TableMain(PrintStream ps) {
-		this.ps = ps;
+	public TableMain(Scanner scanner) {
+		
 	}
 	
 	public void write() {

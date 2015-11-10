@@ -61,8 +61,9 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void writeLineUsingSystemIn() {
-		TableMain main = new TableMain();
+		scanner = new Scanner("HejHej");
+		TableMain main = new TableMain(scanner);
 		main.writeLine();
-		assertEquals(os.toString(), main.inString);
+		assertEquals(os.toString(), "HejHej");
 	}
 }

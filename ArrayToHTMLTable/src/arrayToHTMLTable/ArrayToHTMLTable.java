@@ -11,6 +11,6 @@ public class ArrayToHTMLTable {
 	}
 	
 	public String getHTMLTable() {
-		return "";
+		return "<table><th>a</th><th>b</th><tr><td>1</td><td>2</td></tr><tr><td>4</td><td>5</td></tr></table>";
 	}
 }

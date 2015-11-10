@@ -5,12 +5,19 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import arrayToHTMLTable.ArrayToHTMLTable;
 import arrayToHTMLTable.TableMain;
 
 public class ArrayToHTMLTests {
+	private ByteArrayOutputStream os = new ByteArrayOutputStream();
+	
+	@Before
+	public void setStreams() {
+		System.setOut(new PrintStream(os));
+	}
 	
 	@Test
 	public void createTableObject() {
@@ -35,10 +42,8 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void writeToStream() {
-		ByteArrayOutputStream os = new ByteArrayOutputStream();
-		PrintStream out = new PrintStream(os);
-		
-		TableMain main = new TableMain(out);
+
+		TableMain main = new TableMain();
 		main.write();
 		assertEquals(os.toString(), "Hej");
 		

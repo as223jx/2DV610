@@ -1,9 +1,14 @@
 package tests;
-import arrayToHTMLTable.ArrayToHTMLTable;
-import arrayToHTMLTable.TableMain;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import org.junit.Test;
+
+import arrayToHTMLTable.ArrayToHTMLTable;
+import arrayToHTMLTable.TableMain;
 
 public class ArrayToHTMLTests {
 	
@@ -30,7 +35,12 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void writeToStream() {
+		ByteArrayOutputStream os = new ByteArrayOutputStream();
+		PrintStream out = new PrintStream(os);
+		
 		TableMain main = new TableMain();
 		main.write();
+		assertEquals(os.toString(), "Hej");
+		
 	}
 }

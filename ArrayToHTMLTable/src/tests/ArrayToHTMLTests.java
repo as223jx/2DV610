@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -42,10 +43,15 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void writeToStream() {
-
 		TableMain main = new TableMain();
 		main.write();
 		assertEquals(os.toString(), "Hej");
+	}
+	
+	@Test
+	public void createTableWithTestScannerInsteadOfSystemIn() {
+		Scanner scanner = new Scanner("Hej hej");
 		
+		TableMain main = new TableMain(scanner);
 	}
 }

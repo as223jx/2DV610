@@ -11,6 +11,19 @@ public class ArrayToHTMLTable {
 	}
 	
 	public String getHTMLTable() {
-		return "<table><th>a</th><th>b</th><tr><td>1</td><td>2</td></tr><tr><td>4</td><td>5</td></tr></table>";
+		StringBuilder htmlTable = new StringBuilder();
+		htmlTable.append("<table>");
+		for(Object obj : tableArray[0]) {
+			htmlTable.append("<th>" + obj.toString() + "</th>");
+		}
+		for(int i = 1; i < tableArray.length; i++) {
+			htmlTable.append("<tr>");
+			for(Object obj : tableArray[i]) {
+				htmlTable.append("<td>" + obj.toString() + "</td>");
+			}
+			htmlTable.append("</tr>");
+		}
+		htmlTable.append("</table>");
+		return htmlTable.toString();
 	}
 }

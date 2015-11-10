@@ -38,7 +38,7 @@ public class ArrayToHTMLTests {
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		PrintStream out = new PrintStream(os);
 		
-		TableMain main = new TableMain();
+		TableMain main = new TableMain(out);
 		main.write();
 		assertEquals(os.toString(), "Hej");
 		

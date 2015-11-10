@@ -14,6 +14,7 @@ import arrayToHTMLTable.TableMain;
 
 public class ArrayToHTMLTests {
 	private ByteArrayOutputStream os = new ByteArrayOutputStream();
+	private Scanner scanner = null;
 	
 	@Before
 	public void setStreams() {
@@ -50,7 +51,7 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void createTableWithTestScannerInsteadOfSystemIn() {
-		Scanner scanner = new Scanner("Hej hej");
+		scanner = new Scanner("Hej hej");
 		
 		TableMain main = new TableMain(scanner);
 	}

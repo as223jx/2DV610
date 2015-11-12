@@ -60,19 +60,13 @@ public class ArrayToHTMLTests {
 	}
 	
 	@Test
-	public void writeSomethingWithWhitespaces() {
-		scanner = new Scanner("Hej hej på dig");
-		TableMain main = new TableMain(scanner);
-		main.write();
-		assertEquals(os.toString(), "Hej hej på dig");
-	}
-	
-	@Test
 	public void getArrayOfWords() {
 		scanner = new Scanner("Hej hej på dig");
 		TableMain main = new TableMain(scanner);
 		String[] inArr = {"Hej", "hej", "på", "dig"};
 		String[] arr = main.writeToArray();
-		assertEquals(arr, inArr);
+		for(int i = 0; i < inArr.length; i++) {
+			assertEquals(arr[i], inArr[i]);
+		}
 	}
 }

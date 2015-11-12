@@ -66,4 +66,12 @@ public class ArrayToHTMLTests {
 		main.writeLine();
 		assertEquals(os.toString(), "HejHej");
 	}
+	
+	@Test
+	public void writeSomethingWithWhitespaces() {
+		scanner = new Scanner("Hej hej på dig");
+		TableMain main = new TableMain(scanner);
+		main.writeLine();
+		assertEquals(os.toString(), "Hej hej på dig");
+	}
 }

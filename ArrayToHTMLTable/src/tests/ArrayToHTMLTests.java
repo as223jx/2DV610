@@ -69,4 +69,17 @@ public class ArrayToHTMLTests {
 			assertEquals(arr[i], inArr[i]);
 		}
 	}
+	
+	@Test
+	public void getMultidimensionalArrayUsingNewLine() {
+		scanner = new Scanner("Hej där\nny linje\ntestar vi");
+		TableMain main = new TableMain(scanner);
+		String[][] inArr = {{"Hej", "där"},{"ny", "linje"},{"testar", "vi"}};
+		String[][] arr = main.writeToMultidimensionalArray();
+		for(int i = 0; i < inArr.length; i++) {
+			for(int j = 0; j < in.Arr[i].length; j++) {
+				assertEquals(arr[i][j], inArr[i][j]);
+			}
+		}
+	}
 }

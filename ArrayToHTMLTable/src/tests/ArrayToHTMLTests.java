@@ -71,7 +71,7 @@ public class ArrayToHTMLTests {
 	public void writeSomethingWithWhitespaces() {
 		scanner = new Scanner("Hej hej på dig");
 		TableMain main = new TableMain(scanner);
-		main.writeLine();
+		main.write();
 		assertEquals(os.toString(), "Hej hej på dig");
 	}
 }

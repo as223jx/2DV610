@@ -26,8 +26,8 @@ public class TableMain {
 	
 	public void write() {
 		if(scanner != null && ps != null) {
-			while(scanner.hasNext()) {
-				ps.print(scanner.next());
+			while(scanner.hasNextLine()) {
+				ps.print(scanner.nextLine());
 			}
 		}
 	}

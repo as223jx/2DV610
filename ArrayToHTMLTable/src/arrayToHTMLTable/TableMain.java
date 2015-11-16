@@ -52,4 +52,23 @@ public class TableMain {
 		}
 		return ret;
 	}
+	
+	public String[][] writeToMultidimensionalArray() {
+		String[][] multiArr = null;
+		int count = 0;
+		list = new ArrayList<String>();
+
+		while(scanner.hasNextLine()) {
+			list.add(scanner.nextLine());
+		}
+		
+		multiArr = new String[list.size()][];
+		
+		for(String s : list) {
+			String[] split = s.split(" ");
+			multiArr[count] = split;
+			count ++;
+		}
+		return multiArr;
+	}
 }

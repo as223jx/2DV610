@@ -77,7 +77,7 @@ public class ArrayToHTMLTests {
 		String[][] inArr = {{"Hej", "där"},{"ny", "linje"},{"testar", "vi"}};
 		String[][] arr = main.writeToMultidimensionalArray();
 		for(int i = 0; i < inArr.length; i++) {
-			for(int j = 0; j < in.Arr[i].length; j++) {
+			for(int j = 0; j < inArr[i].length; j++) {
 				assertEquals(arr[i][j], inArr[i][j]);
 			}
 		}

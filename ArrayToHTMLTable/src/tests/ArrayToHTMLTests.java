@@ -6,8 +6,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import arrayToHTMLTable.ArrayToHTMLTable;
 import arrayToHTMLTable.TableMain;
@@ -19,6 +21,11 @@ public class ArrayToHTMLTests {
 	@Before
 	public void setStreams() {
 		System.setOut(new PrintStream(os));
+	}
+	
+	@After
+	public void resetStreams() {
+		System.setOut(System.out);
 	}
 	
 	@Test
@@ -78,6 +85,19 @@ public class ArrayToHTMLTests {
 		String[][] arr = main.writeToMultidimensionalArray();
 		for(int i = 0; i < inArr.length; i++) {
 			for(int j = 0; j < inArr[i].length; j++) {
+				assertEquals(arr[i][j], inArr[i][j]);
+			}
+		}
+	}
+	
+	@Test
+	public void stopReadingWhenDoubleLineBreak() {
+		scanner = new Scanner("Hej där\nny linje\ntestar vi\n\nbort med denna");
+		TableMain main = new TableMain(scanner);
+		String[][] inArr = {{"Hej", "där"},{"ny", "linje"},{"testar", "vi"}};
+		String[][] arr = main.writeToMultidimensionalArray();
+		for(int i = 0; i < arr.length; i++) {
+			for(int j = 0; j < arr[i].length; j++) {
 				assertEquals(arr[i][j], inArr[i][j]);
 			}
 		}

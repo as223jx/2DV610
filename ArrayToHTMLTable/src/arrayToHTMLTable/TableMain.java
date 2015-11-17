@@ -59,7 +59,13 @@ public class TableMain {
 		list = new ArrayList<String>();
 
 		while(scanner.hasNextLine()) {
-			list.add(scanner.nextLine());
+			String str = scanner.nextLine();
+			if(str.isEmpty()) {
+				break;
+			}
+			else {
+				list.add(str);
+			}
 		}
 		
 		multiArr = new String[list.size()][];

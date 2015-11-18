@@ -107,7 +107,7 @@ public class ArrayToHTMLTests {
 	public void useDashToMakeEmptyCell() {
 		scanner = new Scanner("Hej på dig\nhär - ska\ndet vara tomt!");
 		TableMain main = new TableMain(scanner);
-		String[][] inArr = {{"Hej", "på", "dig"},{"här", "", "ska"},{"det", "vara", "tomt"}};
+		String[][] inArr = {{"Hej", "på", "dig"},{"här", "", "ska"},{"det", "vara", "tomt!"}};
 		String[][] arr = main.writeToMultidimensionalArray();
 		
 		for(int i = 0; i < arr.length; i++) {

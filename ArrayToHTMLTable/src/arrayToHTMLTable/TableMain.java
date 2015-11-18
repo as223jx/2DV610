@@ -72,7 +72,14 @@ public class TableMain {
 		
 		for(String s : list) {
 			String[] split = s.split(" ");
+			for(int i = 0; i < split.length; i++) {
+				if(split[i].equals("-")) {
+					split[i] = "";
+				}
+			}
+
 			multiArr[count] = split;
+			
 			count ++;
 		}
 		return multiArr;

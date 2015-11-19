@@ -110,7 +110,7 @@ public class ArrayToHTMLTests {
 	}
 	
 	@Test
-	public void writeHTMLTableCodeToTxtFile() {
+	public void makeSureFileIsCreated() {
 		String[][] inArr = {{"Table", "head"},{"Rad", "två", "här"},{"vara", "tomt!"}};
 		String path = "C:\\Users\\Alexandra\\Documents\\htmltabletest.txt";
 		ArrayToHTMLTable table = new ArrayToHTMLTable(inArr);

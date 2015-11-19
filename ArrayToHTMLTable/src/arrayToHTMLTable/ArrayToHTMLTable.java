@@ -1,5 +1,9 @@
 package arrayToHTMLTable;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+
 public class ArrayToHTMLTable {
 	
 	public Object[][] tableArray = {};
@@ -25,5 +29,19 @@ public class ArrayToHTMLTable {
 		}
 		htmlTable.append("</table>");
 		return htmlTable.toString();
+	}
+	
+	public void writeToFile(String path) {
+		try {
+			PrintWriter writer = new PrintWriter(path, "UTF-8");
+			writer.print(getHTMLTable());
+			writer.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

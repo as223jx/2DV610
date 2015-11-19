@@ -35,24 +35,6 @@ public class TableMain {
 		}
 	}
 	
-	public String[] writeToArray() {
-		count = 0;
-		String str = null;
-		if(scanner != null && ps != null) {
-			while(scanner.hasNext()) {
-				count++;
-				str = scanner.next();
-				list.add(str);
-				ps.print(str);
-			}
-		}
-		String[] ret = new String[list.size()];
-		for(int i = 0; i < list.size(); i++) {
-			ret[i] = list.get(i);
-		}
-		return ret;
-	}
-	
 	public String[][] writeToMultidimensionalArray() {
 		String[][] multiArr = null;
 		int count = 0;
@@ -71,7 +53,7 @@ public class TableMain {
 		multiArr = new String[list.size()][];
 		
 		for(String s : list) {
-			String[] split = s.split(" ");
+			String[] split = s.split("#");
 			for(int i = 0; i < split.length; i++) {
 				if(split[i].equals("-")) {
 					split[i] = "";

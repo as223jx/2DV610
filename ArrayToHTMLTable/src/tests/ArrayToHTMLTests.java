@@ -67,19 +67,8 @@ public class ArrayToHTMLTests {
 	}
 	
 	@Test
-	public void getArrayOfWords() {
-		scanner = new Scanner("Hej hej på dig");
-		TableMain main = new TableMain(scanner);
-		String[] inArr = {"Hej", "hej", "på", "dig"};
-		String[] arr = main.writeToArray();
-		for(int i = 0; i < inArr.length; i++) {
-			assertEquals(arr[i], inArr[i]);
-		}
-	}
-	
-	@Test
 	public void getMultidimensionalArrayUsingNewLine() {
-		scanner = new Scanner("Hej där\nny linje\ntestar vi");
+		scanner = new Scanner("Hej#där\nny#linje\ntestar#vi");
 		TableMain main = new TableMain(scanner);
 		String[][] inArr = {{"Hej", "där"},{"ny", "linje"},{"testar", "vi"}};
 		String[][] arr = main.writeToMultidimensionalArray();
@@ -92,7 +81,7 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void stopReadingWhenDoubleLineBreak() {
-		scanner = new Scanner("Hej där\nny linje\ntestar vi\n\nbort med denna");
+		scanner = new Scanner("Hej#där\nny#linje\ntestar#vi\n\nbort#med#denna");
 		TableMain main = new TableMain(scanner);
 		String[][] inArr = {{"Hej", "där"},{"ny", "linje"},{"testar", "vi"}};
 		String[][] arr = main.writeToMultidimensionalArray();
@@ -105,7 +94,7 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void useDashToMakeEmptyCell() {
-		scanner = new Scanner("Hej på dig\nhär - ska\ndet vara tomt!");
+		scanner = new Scanner("Hej#på#dig\nhär#-#ska\ndet#vara#tomt!");
 		TableMain main = new TableMain(scanner);
 		String[][] inArr = {{"Hej", "på", "dig"},{"här", "", "ska"},{"det", "vara", "tomt!"}};
 		String[][] arr = main.writeToMultidimensionalArray();

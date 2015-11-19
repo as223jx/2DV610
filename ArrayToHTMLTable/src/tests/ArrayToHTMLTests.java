@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -126,8 +127,21 @@ public class ArrayToHTMLTests {
 	
 	@Test
 	public void checkFileContents() {
-		ArrayToHTMLTable table = Mockito.mock(ArrayToHTMLTable.class);
+		String[][] inArr = {{"Table", "head"},{"1", "2"},{"3", "4"}};
+		ArrayToHTMLTable table = new ArrayToHTMLTable(inArr);
 		String path = "C:\\Users\\Alexandra\\Documents\\htmltabletest.txt";
+		table.writeToFile(path);
+		
+		String fileContent = "";
+		try {
+			Scanner sc = new Scanner(new File(path));
+			while(sc.hasNext()) {
+				fileContent += sc.next();
+			}
+			assertEquals(fileContent, "<table><th>Table</th><th>head</th><tr><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td></tr></table>");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		
 	}
 }

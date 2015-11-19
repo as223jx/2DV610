@@ -3,7 +3,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.PrintStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 import org.junit.After;
@@ -103,7 +106,16 @@ public class ArrayToHTMLTests {
 			for(int j = 0; j < arr[i].length; j++) {
 				assertEquals(arr[i][j], inArr[i][j]);
 			}
-		}
-		
+		}	
+	}
+	
+	@Test
+	public void writeHTMLTableCodeToTxtFile() {
+		String[][] inArr = {{"Table", "head"},{"Rad", "två", "här"},{"vara", "tomt!"}};
+		String path = "C:\\Users\\Alexandra\\Documents\\htmltabletest.txt";
+		ArrayToHTMLTable table = new ArrayToHTMLTable(inArr);
+		table.writeToFile(path);
+		File f = new File(path);
+		assertTrue(f.isFile());
 	}
 }

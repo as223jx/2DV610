@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
@@ -113,9 +114,20 @@ public class ArrayToHTMLTests {
 	public void makeSureFileIsCreated() {
 		String[][] inArr = {{"Table", "head"},{"Rad", "två", "här"},{"vara", "tomt!"}};
 		String path = "C:\\Users\\Alexandra\\Documents\\htmltabletest.txt";
+		File f = new File(path);
+		if(f.isFile()) {
+			f.delete();
+		}
 		ArrayToHTMLTable table = new ArrayToHTMLTable(inArr);
 		table.writeToFile(path);
-		File f = new File(path);
+
 		assertTrue(f.isFile());
+	}
+	
+	@Test
+	public void checkFileContents() {
+		ArrayToHTMLTable table = Mockito.mock(ArrayToHTMLTable.class);
+		String path = "C:\\Users\\Alexandra\\Documents\\htmltabletest.txt";
+		
 	}
 }

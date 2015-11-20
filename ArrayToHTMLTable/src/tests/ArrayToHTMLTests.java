@@ -143,11 +143,4 @@ public class ArrayToHTMLTests {
 			e.printStackTrace();
 		}
 	}
-	
-	@Test (expected = FileNotFoundException.class)
-	public void tryFileNotFoundException() {
-		ArrayToHTMLTable table = Mockito.mock(ArrayToHTMLTable.class);
-		String path = "C:\\Users\\Alexandra\\NonexistingDir\\htmltabletest.txt";
-		table.writeToFile(path);
-	}
 }

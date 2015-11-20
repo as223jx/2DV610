@@ -150,5 +150,6 @@ public class ArrayToHTMLTests {
 		Mockito.when(main.writeToMultidimensionalArray()).thenReturn(inArr);
 		HTMLTable table = new HTMLTable(main.writeToMultidimensionalArray());
 		table.editCell(x, y, "new cell content");
+		assertEquals(table.tableArray[x][y], "new cell content");
 	}
 }

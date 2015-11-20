@@ -14,6 +14,12 @@ public class HTMLTable {
 		tableArray = array;
 	}
 	
+	public void editCell(int x, int y, Object newElement) {
+		if(tableArray[x][y] != null) {
+			tableArray[x][y] = newElement;
+		}
+	}
+	
 	public String getHTMLTable() {
 		StringBuilder htmlTable = new StringBuilder();
 		htmlTable.append("<table>");

@@ -39,9 +39,9 @@ public class TableMain {
 		String[][] multiArr = null;
 		int count = 0;
 		list = new ArrayList<String>();
-
+		String str;
 		while(scanner.hasNextLine()) {
-			String str = scanner.nextLine();
+			str = scanner.nextLine();
 			if(str.isEmpty()) {
 				break;
 			}
@@ -51,9 +51,11 @@ public class TableMain {
 		}
 		
 		multiArr = new String[list.size()][];
+		String[] split;
 		
 		for(String s : list) {
-			String[] split = s.split("#");
+			split = s.split("#");
+			
 			for(int i = 0; i < split.length; i++) {
 				if(split[i].equals("-")) {
 					split[i] = "";
@@ -61,7 +63,6 @@ public class TableMain {
 			}
 
 			multiArr[count] = split;
-			
 			count ++;
 		}
 		return multiArr;

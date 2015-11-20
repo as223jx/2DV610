@@ -142,6 +142,5 @@ public class ArrayToHTMLTests {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
 	}
 }

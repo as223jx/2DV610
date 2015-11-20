@@ -144,6 +144,8 @@ public class ArrayToHTMLTests {
 	@Test
 	public void testEditCellInTable() {
 		TableMain main = Mockito.mock(TableMain.class);
+		int x = 2;
+		int y = 1;
 		String[][] inArr = {{"Table", "head"},{"1", "2"},{"3", "4"}};
 		Mockito.when(main.writeToMultidimensionalArray()).thenReturn(inArr);
 		HTMLTable table = new HTMLTable(main.writeToMultidimensionalArray());

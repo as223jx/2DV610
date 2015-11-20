@@ -6,9 +6,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 import org.junit.After;
@@ -16,7 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import arrayToHTMLTable.ArrayToHTMLTable;
+import arrayToHTMLTable.HTMLTable;
 import arrayToHTMLTable.TableMain;
 
 public class ArrayToHTMLTests {
@@ -36,20 +33,20 @@ public class ArrayToHTMLTests {
 	@Test
 	public void createTableObject() {
 		Object[][] array = {{"a", "b", "c"}, {1, 2, 3}, {4, 5, 6}};
-		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
+		HTMLTable table = new HTMLTable(array);
 		assertTrue(table.tableArray == array);
 	}
 	
 	@Test (expected = NullPointerException.class)
 	public void testNullArrayError() {
 		Object[][] array = null;
-		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
+		HTMLTable table = new HTMLTable(array);
 	}
 
 	@Test
 	public void testGetHTMLTable() {
 		Object[][] array = {{"a", "b"}, {1, 2}, {4, 5}};
-		ArrayToHTMLTable table = new ArrayToHTMLTable(array);
+		HTMLTable table = new HTMLTable(array);
 		String htmlTable = table.getHTMLTable();
 		assertEquals(htmlTable, "<table><th>a</th><th>b</th><tr><td>1</td><td>2</td></tr><tr><td>4</td><td>5</td></tr></table>");
 	}
@@ -119,7 +116,7 @@ public class ArrayToHTMLTests {
 		if(f.isFile()) {
 			f.delete();
 		}
-		ArrayToHTMLTable table = new ArrayToHTMLTable(inArr);
+		HTMLTable table = new HTMLTable(inArr);
 		table.writeToFile(path);
 
 		assertTrue(f.isFile());
@@ -128,7 +125,7 @@ public class ArrayToHTMLTests {
 	@Test
 	public void checkFileContents() {
 		String[][] inArr = {{"Table", "head"},{"1", "2"},{"3", "4"}};
-		ArrayToHTMLTable table = new ArrayToHTMLTable(inArr);
+		HTMLTable table = new HTMLTable(inArr);
 		String path = "C:\\Users\\Alexandra\\Documents\\htmltabletest.txt";
 		table.writeToFile(path);
 		

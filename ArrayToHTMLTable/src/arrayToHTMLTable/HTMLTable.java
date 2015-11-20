@@ -4,11 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
-public class ArrayToHTMLTable {
-	
+public class HTMLTable {
+
 	public Object[][] tableArray = {};
 	
-	public ArrayToHTMLTable(Object[][] array) {
+	public HTMLTable(Object[][] array) {
 		if(array == null)
 			throw new NullPointerException();
 		tableArray = array;

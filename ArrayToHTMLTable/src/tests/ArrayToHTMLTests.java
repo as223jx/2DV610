@@ -4,7 +4,9 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -27,7 +29,7 @@ public class ArrayToHTMLTests {
 	
 	@After
 	public void resetStreams() {
-		System.setOut(System.out);
+		System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
 	}
 	
 	@Test
@@ -159,5 +161,14 @@ public class ArrayToHTMLTests {
 		HTMLTable table = new HTMLTable(inArr);
 		table.setId("10");
 		assertEquals(table.getId(), "10");
+	}
+	
+	@Test
+	public void checkIdIsInHTMLTable() {
+		String[][] inArr = {{"Table", "head"},{"1", "2"},{"3", "4"}};
+		HTMLTable table = new HTMLTable(inArr);
+		table.setId("10");
+		assertEquals(table.getHTMLTable(), "<table id=\"10\"><th>Table</th><th>head</th><tr><td>1</td><td>2</td></tr><tr><td>3</td><td>4</td></tr></table>");
+		
 	}
 }

@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 public class HTMLTable {
 
 	public Object[][] tableArray = {};
+	private String tableId = null;
 	
 	public HTMLTable(Object[][] array) {
 		if(array == null)
@@ -18,6 +19,14 @@ public class HTMLTable {
 		if(tableArray[x][y] != null) {
 			tableArray[x][y] = newElement;
 		}
+	}
+	
+	public void setId(String id) {
+		tableId = id;
+	}
+	
+	public String getId() {
+		return tableId;
 	}
 	
 	public String getHTMLTable() {

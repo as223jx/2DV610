@@ -152,11 +152,4 @@ public class ArrayToHTMLTests {
 		table.editCell(x, y, "new cell content");
 		assertEquals(table.tableArray[x][y], "new cell content");
 	}
-	
-	@Test
-	public void testSetGetId() {
-		HTMLTable table = Mockito.mock(HTMLTable.class);
-		table.setId("10");
-		assertEquals(table.getId(), "10");
-	}
 }

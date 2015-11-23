@@ -152,4 +152,12 @@ public class ArrayToHTMLTests {
 		table.editCell(x, y, "new cell content");
 		assertEquals(table.tableArray[x][y], "new cell content");
 	}
+	
+	@Test
+	public void testSetGetId() {
+		String[][] inArr = {{"Table", "head"},{"1", "2"},{"3", "4"}};
+		HTMLTable table = new HTMLTable(inArr);
+		table.setId("10");
+		assertEquals(table.getId(), "10");
+	}
 }

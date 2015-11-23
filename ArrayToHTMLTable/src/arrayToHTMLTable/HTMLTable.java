@@ -31,7 +31,13 @@ public class HTMLTable {
 	
 	public String getHTMLTable() {
 		StringBuilder htmlTable = new StringBuilder();
-		htmlTable.append("<table>");
+		if(tableId != null) {
+			htmlTable.append("<table id=\"" + tableId + "\">");
+		}
+		else {
+			htmlTable.append("<table>");
+		}
+		
 		for(Object obj : tableArray[0]) {
 			htmlTable.append("<th>" + obj.toString() + "</th>");
 		}

@@ -22,11 +22,6 @@ public class TableMain {
 		this.scanner = scanner;
 	}
 	
-	public void writeLine() {
-		inString = scanner.next();
-		ps.print(inString);
-	}
-	
 	public void write() {
 		if(scanner != null && ps != null) {
 			while(scanner.hasNextLine()) {
